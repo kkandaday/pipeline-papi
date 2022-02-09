@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config_PAPI" doc:name="HTTP Listener config" doc:id="dc6f2a4e-13de-4a49-92e7-d5c6bc350b39" basePath="/ppl_process" >
+		<http:listener-connection host="0.0.0.0" port="8087" />
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration_SAPI" doc:name="HTTP Request configuration" doc:id="e5bf6b0f-12a7-4642-8ca8-f8edde8eca61" basePath="/ppl_system" >
+		<http:request-connection host="localhost" port="8088" />
+	</http:request-config>
+	<import doc:name="Import" doc:id="af418d52-d407-4581-9e1c-796b69595adb" file="pipelineevent.xml" />
+	<configuration-properties doc:name="Configuration properties" doc:id="27b7dfb7-31a0-42f6-9937-996eef209e9c" file="mule-app.properties" />
+</mule>
